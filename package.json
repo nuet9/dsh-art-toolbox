@@ -1,0 +1,42 @@
+{
+  "name": "@local/art-toolbox",
+  "version": "0.4.0",
+  "private": true,
+  "type": "module",
+  "description": "Custom art task windows in the Harness sidebar",
+  "exports": {
+    ".": "./index-v6.js",
+    "./client": "./client-v5.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index-v6.js",
+    "client-v5.js",
+    "model-v5.js",
+    "defaults-v5.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "tests/*.mjs",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node tests/regression.mjs && node tests/projects.mjs"
+  },
+  "dependencies": {
+    "zod": "4.4.3"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  }
+}

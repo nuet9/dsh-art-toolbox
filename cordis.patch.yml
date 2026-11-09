@@ -1,0 +1,4 @@
+- insert:
+    - id: local-art-toolbox
+      name: '@local/art-toolbox'
+      config: {}
